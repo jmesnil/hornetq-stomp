@@ -28,12 +28,12 @@ You can use Apache Ant to run the server.
 
 ## Stomp Client ##
 
-We'll use telnet as our Stomp client:
+We use telnet as our Stomp client:
 
       $ telnet localhost 61613
       
-First, we connect to the server.
-To keep things simple, we've disable security from the server so that
+First, we connect to the server.  
+To keep things simple, we have disabled security from the server so that
 we can connect to it anonymously:
 
      CONNECT
@@ -43,6 +43,8 @@ we can connect to it anonymously:
      ^@
      
 (^@ is Ctl-@)
+
+
 The server replies that we are connected:
 
      CONNECTED

@@ -12,8 +12,6 @@ You can use Apache Ant to run the server.
 
 ## Start the server ##
 
-The server is named [HornetQStompServer](src/org/hornetq/stomp/HornetQStompServer.java).
-
      $ ant server
      ...
 

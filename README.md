@@ -97,6 +97,8 @@ Finally, we acknowledge the message:
      ACK    
      message-id: ID:7b28be24-00f1-11df-b27f-001c42000009:0000000000000000
      
+     ^@
+
 [hornetq]:http://jboss.org/hornetq/
 [stomp]:  http://stomp.codehaus.org/
      

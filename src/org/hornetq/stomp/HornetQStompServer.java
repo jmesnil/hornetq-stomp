@@ -24,7 +24,6 @@ public class HornetQStompServer {
 
 		// to keep things simple, we disable persistence and security
 		Configuration configuration = new ConfigurationImpl();
-		configuration.setPersistenceEnabled(false);
 		configuration.setSecurityEnabled(false);
 		// we add a In-VM acceptor to HornetQ as the server will be accessible
 		// outside using Stomp

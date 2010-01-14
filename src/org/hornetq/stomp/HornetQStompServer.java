@@ -22,7 +22,7 @@ public class HornetQStompServer {
 
 	public static void main(String[] args) throws Exception {
 
-		// to keep things simple, we disable persistence and security
+		// to keep things simple, we disable security
 		Configuration configuration = new ConfigurationImpl();
 		configuration.setSecurityEnabled(false);
 		// we add a In-VM acceptor to HornetQ as the server will be accessible

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="server" name="hornetq-stomp">
+    <property environment="env"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.6"/>
+    <property name="source" value="1.6"/>
+    <path id="hornetq-stomp.classpath">
+        <pathelement location="bin"/>
+        <pathelement location="lib/commons-logging-1.1.jar"/>
+        <pathelement location="lib/hornetq-core.jar"/>
+        <pathelement location="lib/hornetq-transports.jar"/>
+        <pathelement location="lib/jboss-jms-api.jar"/>
+        <pathelement location="lib/netty.jar"/>
+        <pathelement location="lib/stompconnect-1.0.jar"/>
+        <pathelement location="lib/hornetq-jms.jar"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+
+	<target name="clean">
+        <delete dir="bin"/>
+    </target>
+
+    <target depends="init" name="build">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="hornetq-stomp.classpath"/>
+        </javac>
+    </target>
+
+    <target name="server" depends="build">
+        <java classname="org.hornetq.stomp.HornetQStompServer" failonerror="true" fork="yes">
+            <classpath refid="hornetq-stomp.classpath"/>
+        </java>
+    </target>
+</project>

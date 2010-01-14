@@ -58,7 +58,20 @@ We send a message to the destination `/queue/a`:
      hello, hornetq!
      ^@
      
-And we subscribe to this destination:
+To make things more interesting, you can now kill the server and restart it.
+The message is persisted and will be consumed after the server is restarted.
+
+We open a new Stomp client and connect to the server:
+
+     $ telnet localhost 61613
+      
+     CONNECT
+     login:
+     passcode:
+     
+     ^@
+     
+And we subscribe to the destination:
      
      SUBSCRIBE
      destination: /queue/a
